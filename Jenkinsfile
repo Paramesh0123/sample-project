@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Hello World') {
       steps {
-        sh 'git clone https://github.com/Paramesh0123/sample-project.git'
+        sh 'git pull https://github.com/Paramesh0123/sample-project.git'
       }
     }
     stage('build') {
