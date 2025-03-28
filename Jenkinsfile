@@ -1,10 +1,10 @@
+@Library('shared_libraries') _
 pipeline {
   agent any 
-
   stages {
     stage('Hello World') {
       steps {
-        checkout-sample-project()
+        checkout_sample_project()
       }
     }
     stage('build') {
