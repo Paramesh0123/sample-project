@@ -7,7 +7,12 @@ pipeline {
         checkout_sample_project()
       }
     }
-    stage('build') {
+    stage('compile') {
+      steps {
+        mavenbuild()
+      }
+    }
+    stage('package') {
       steps {
         mavenbuild()
       }
