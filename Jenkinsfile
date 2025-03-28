@@ -4,12 +4,12 @@ pipeline {
   stages {
     stage('Hello World') {
       steps {
-        sh 'git pull https://github.com/Paramesh0123/sample-project.git'
+        checkout-sample-project()
       }
     }
     stage('build') {
       steps {
-        sh 'mvn clean install'
+        mavenbuild()
       }
     }
     stage('deploy') {
