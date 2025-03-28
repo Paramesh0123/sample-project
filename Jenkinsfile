@@ -7,6 +7,7 @@ pipeline {
         checkout_sample_project()
       }
     }
+    /*
     stage('compile') {
       steps {
         mavenbuild()
@@ -17,6 +18,7 @@ pipeline {
         mavenbuild()
       }
     }
+    */
     stage('deploy') {
       steps {
         sshagent(['connection-tomcat-jenkins']) {
