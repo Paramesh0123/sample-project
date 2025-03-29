@@ -1,7 +1,7 @@
 pipeline {
 agent {
   node {
-    label 'docker-agent-1'
+    label 'aws-agent-host1'
   }
 }
 stages {
