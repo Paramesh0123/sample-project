@@ -7,16 +7,12 @@ pipeline {
         checkout_sample_project()
       }
     }
-    stage('compile') {
+    stage('compile and package') {
       steps {
         mavenbuild()
       }
     }
-    stage('package') {
-      steps {
-        mavenbuild()
-      }
-    }
+    
     stage('deploy') {
       steps {
         sshagent(['connection-tomcat-jenkins']) {
