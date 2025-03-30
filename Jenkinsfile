@@ -19,7 +19,7 @@ pipeline {
     }
     stage('SonarQube Analysis') {
       steps {
-         withSonarQubeEnv('sonar-code-check') {
+         withSonarQubeEnv('Sonar-code-check') {
 	   sh 'mvn sonar:sonar'
 	 }
       }
