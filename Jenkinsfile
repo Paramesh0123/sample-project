@@ -21,7 +21,7 @@ stages {
   }
   stage('deploy') {
     steps {
-      sshagent(['deploy_creds']) {
+      sshagent(['connection-tomcat-jenkins']) {
         sh "scp -o StrictHostKeyChecking=no target/hello-world-webapp.war ubuntu@35.154.24.43:/home/ubuntu/apache-tomcat-10.1.39/webapps"
       }
     }
