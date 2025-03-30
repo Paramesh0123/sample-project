@@ -8,9 +8,11 @@ pipeline {
       }
     }
     stage('SonarQube Analysis') {
-       withSonarQubeEnv('Sonar-code-check') {
-	       sh 'mvn sonar:sonar'
-	     }
+      steps {
+        withSonarQubeEnv('Sonar-code-check') {
+	  sh 'mvn sonar:sonar'
+	}
+      }
     }
 
     stage('compile') {
