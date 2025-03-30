@@ -7,14 +7,6 @@ pipeline {
         checkout_sample_project()
       }
     }
-    stage('SonarQube Analysis') {
-      steps {
-        withSonarQubeEnv('Sonar-code-check') {
-	  sh 'mvn sonar:sonar'
-	}
-      }
-    }
-
     stage('compile') {
       steps {
         mavenbuild()
@@ -23,6 +15,13 @@ pipeline {
     stage('package') {
       steps {
         mavenbuild()
+      }
+    }
+    stage('SonarQube Analysis') {
+      steps {
+         withSonarQubeEnv('sonar-code-check') {
+	   sh 'mvn sonar:sonar'
+	 }
       }
     }
     stage('deploy') {
