@@ -8,9 +8,9 @@ pipeline {
       }
       stage('SonarQube Analysis') {
        steps {
-         withSonarQubeEnv('sonar-login ') {
-	       sh 'mvn sonar:sonar'
-	       }
+         withSonarQubeEnv('sonar-login') {
+	 sh 'mvn sonar:sonar'
+	 }
       }
    }
       stage('build') {
