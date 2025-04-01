@@ -14,7 +14,7 @@ pipeline {
       stage('deploy') {
         steps {
           sshagent(['aws-key1']) {
-          sh "scp -o StrictHostKeyChecking=no target/hello-world-webapp.war ubuntu@13.201.137.137:/home/ubuntu/apache-tomcat-10.1.39/webapps"
+          sh "scp -o StrictHostKeyChecking=no target/hello-world-webapp.war ubuntu@13.126.156.164:/home/ubuntu/apache-tomcat-10.1.39/webapps"
           }
         }
       }
