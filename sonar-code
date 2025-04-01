@@ -8,7 +8,7 @@ pipeline {
       }
       stage('SonarQube Analysis') {
        steps {
-         withSonarQubeEnv('give the name, the name given in SonarQube installations in system configuration ') {
+         withSonarQubeEnv('sonar-login ') {
 	       sh 'mvn sonar:sonar'
 	       }
       }
