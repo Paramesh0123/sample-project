@@ -1,0 +1,22 @@
+pipeline {
+agent any 
+
+	stages {
+		stage('checkout') {
+			steps {
+				sh 'git clone https://github.com/BalaSivaDev/hello-world.git'
+			}
+		}
+		stage('build') {
+			steps {
+				sh 'mvn clean install'
+			}
+		stage('deploy') {
+			steps {
+				sshagent(['tomcat-key']) {
+				sh "scp -o StrictHostKeyChecking=no target/hello-world ubuntu@125.12.3.4:/home/ubuntu/apa/webapps"
+				}
+			}
+		}
+	}
+}
